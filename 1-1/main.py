@@ -1,3 +1,5 @@
+print('Hello World')
+
 '''main.py - 로그 파일을 분석하여 사고 원인을 Markdown 형식으로 저장하는 스크립트'''
 
 from typing import List
