@@ -1,4 +1,4 @@
-print('Hello World')
+print('Hello Mars')
 
 '''main.py - 로그 파일을 분석하여 사고 원인을 Markdown 형식으로 저장하는 스크립트'''
 
@@ -24,7 +24,7 @@ def read_log_file(file_path: str) -> List[str]:
 def analyze_logs(log_content: List[str]) -> str:
     '''로그 내용을 분석하여 사고 원인을 반환.'''
     # 특정 키워드를 포함하는 로그 라인을 추출
-    error_logs = [line for line in log_content if 'ERROR' in line or 'FAIL' in line or 'unstable' in line or 'explosion' in line]
+    error_logs = [line for line in log_content if 'ERROR' in line or 'FAIL' in line or 'unstable' in line or 'explosion' in line or 'powered down' in line]
     
     # Markdown 형식의 보고서 생성
     report = [
@@ -50,8 +50,8 @@ def save_analysis_report(report_content: str, output_file: str) -> None:
 
 def main() -> None:
     '''로그 파일을 읽고 분석 후 보고서를 저장하는 메인 함수.'''
-    log_file = '1-1/mission_computer_main.log'  # 로그 파일 경로
-    report_file = '1-1/log_analysis.md'  # 분석 결과 저장 파일 경로
+    log_file = 'mission_computer_main.log'  # 로그 파일 경로
+    report_file = 'log_analysis.md'  # 분석 결과 저장 파일 경로
     
     print('로그 파일을 읽는 중...')
     logs = read_log_file(log_file)
